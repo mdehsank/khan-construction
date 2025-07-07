@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khan Constructions - Building Excellence</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary: #0a2c5e;
+            --secondary: #e8a735;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --gray: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--dark);
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary);
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: #fff;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #d1942a;
+            transform: translateY(-3px);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            margin: 15px auto;
+        }
+        
+        /* Header */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .logo-text span {
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(10, 44, 94, 0.8), rgba(10, 44, 94, 0.8)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+            margin-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .hero-btns .btn {
+            background: var(--secondary);
+        }
+        
+        .hero-btns .btn-outline {
+            background: transparent;
+            border: 2px solid #fff;
+        }
+        
+        .hero-btns .btn-outline:hover {
+            background: #fff;
+            color: var(--primary);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background: var(--light);
+        }
+        
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .about-img {
+            position: relative;
+        }
+        
+        .about-img img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-img .img-overlay {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            width: 70%;
+            border: 10px solid #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-content h2 {
+            font-size: 36px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .about-content h3 {
+            font-size: 24px;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+        
+        .about-content ul {
+            margin: 20px 0;
+        }
+        
+        .about-content ul li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .about-content ul li:before {
+            content: '✓';
+            color: var(--secondary);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        /* Projects Section */
+        .projects {
+            padding: 80px 0;
+        }
+        
+        .projects-filter {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .filter-btn {
+            padding: 8px 20px;
+            background: var(--light);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--secondary);
+            color: #fff;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .project-img {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .project-card:hover .project-img img {
+            transform: scale(1.1);
+        }
+        
+        .project-info {
+            padding: 20px;
+            background: #fff;
+        }
+        
+        .project-info h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .project-info p {
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+        
+        .project-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: var(--gray);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background: var(--light);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .service-img {
+            height: 200px;
+        }
+        
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .service-info {
+            padding: 20px;
+        }
+        
+        .service-info h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .service-info p {
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+        
+        /* Materials Section */
+        .materials {
+            padding: 80px 0;
+        }
+        
+        .material-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .tab-btn {
+            padding: 10px 25px;
+            background: none;
+            border: none;
+            border-bottom: 3px solid transparent;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .tab-btn.active, .tab-btn:hover {
+            border-bottom: 3px solid var(--secondary);
+            color: var(--secondary);
+        }
+        
+        .material-content {
+            display: none;
+        }
+        
+        .material-content.active {
+            display: block;
+        }
+        
+        .material-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .material-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        
+        .material-gallery img {
+            width: 100%;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+        
+        .material-gallery img:hover {
+            transform: scale(1.05);
+        }
+        
+        .material-specs h3 {
+            font-size: 28px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .specs-table th, .specs-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .specs-table th {
+            background: var(--light);
+        }
+        
+        /* Clients Section */
+        .clients {
+            padding: 60px 0;
+            background: var(--light);
+        }
+        
+        .client-logos {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .client-logo {
+            height: 80px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s;
+        }
+        
+        .client-logo:hover {
+            filter: grayscale(0);
+            opacity: 1;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .contact-info h3 {
+            font-size: 24px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        
+        .contact-icon {
+            margin-right: 15px;
+            color: var(--secondary);
+            font-size: 20px;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .contact-form textarea {
+            height: 150px;
+        }
+        
+        .map-container {
+            height: 400px;
+            margin-top: 40px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: #fff;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-col h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--secondary);
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul li a {
+            color: #ddd;
+            transition: color 0.3s;
+        }
+        
+        .footer-col ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: #fff;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ddd;
+            font-size: 14px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-container,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .material-detail {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="https://via.placeholder.com/50x50" alt="Khan Constructions Logo">
+                <div class="logo-text">KHAN <span>CONSTRUCTIONS</span></div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#materials">Materials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Building Excellence in Civil Construction</h1>
+                <p>Delivering quality construction projects across North India with professionalism and integrity since 2010</p>
+                <div class="hero-btns">
+                    <a href="#projects" class="btn">Our Projects</a>
+                    <a href="#contact" class="btn btn-outline">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Khan Constructions</h2>
+            <div class="about-container">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1581093196270-1a1b7e3ab1f0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Construction Team">
+                    <img src="https://images.unsplash.com/photo-1605106702734-205df224ecce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Completed Project" class="img-overlay">
+                </div>
+                <div class="about-content">
+                    <h2>Our Story</h2>
+                    <p>Khan Constructions has been a trusted name in civil construction since 2010. Founded by Shahil Khan, we've grown from a small local contractor to a respected firm handling multi-crore projects across North India.</p>
+                    
+                    <h3>Our Team</h3>
+                    <p>Our team of 50+ skilled professionals brings technical expertise and hands-on experience to every project. We specialize in:</p>
+                    <ul>
+                        <li>Industrial construction (BIO CNG plants, factories)</li>
+                        <li>Landscape and stone work</li>
+                        <li>Excavation and foundation work</li>
+                        <li>Commercial building construction</li>
+                    </ul>
+                    
+                    <h3>What Sets Us Apart</h3>
+                    <ul>
+                        <li>Strict quality control at every stage</li>
+                        <li>Timely project completion</li>
+                        <li>Transparent pricing</li>
+                        <li>Client-focused approach</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="section-title">Our Projects</h2>
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="industrial">Industrial</button>
+                <button class="filter-btn" data-filter="stone">Stone Work</button>
+                <button class="filter-btn" data-filter="excavation">Excavation</button>
+            </div>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-category="industrial">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="BIO CNG Plant Jaipur">
+                    </div>
+                    <div class="project-info">
+                        <h3>BIO CNG Plant, Jaipur</h3>
+                        <p>Complete civil works including foundation, structural work, and finishing for industrial BIO CNG facility.</p>
+                        <div class="project-meta">
+                            <span>2022</span>
+                            <span>₹2,50,00,000</span>
+                        </div>
+                        <a href="project1.html" class="btn" style="margin-top: 15px; display: inline-block;">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card" data-category="industrial excavation">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1605106702734-205df224ecce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="BIO CNG Plant Meerut">
+                    </div>
+                    <div class="project-info">
+                        <h3>BIO CNG Plant, Meerut</h3>
+                        <p>Excavation and civil works including deep excavation with shoring and reinforced concrete foundations.</p>
+                        <div class="project-meta">
+                            <span>May 2023</span>
+                            <span>₹4,00,00,000</span>
+                        </div>
+                        <a href="project2.html" class="btn" style="margin-top: 15px; display: inline-block;">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card" data-category="stone">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Landscape Stone Work">
+                    </div>
+                    <div class="project-info">
+                        <h3>Landscape Stone Work</h3>
+                        <p>Natural stone paving, decorative stone walls, and stone cladding for residential complex.</p>
+                        <div class="project-meta">
+                            <span>Jun 2023</span>
+                            <span>₹15,14,143</span>
+                        </div>
+                        <a href="project3.html" class="btn" style="margin-top: 15px; display: inline-block;">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-card" data-category="stone">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Dholpur Stone Fixing">
+                    </div>
+                    <div class="project-info">
+                        <h3>Dholpur Stone Fixing</h3>
+                        <p>Supply and installation of Dholpur stone with custom cutting for architectural features.</p>
+                        <div class="project-meta">
+                            <span>Aug 2023</span>
+                            <span>₹90,00,000</span>
+                        </div>
+                        <a href="project4.html" class="btn" style="margin-top: 15px; display: inline-block;">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Civil Construction">
+                    </div>
+                    <div class="service-info">
+                        <h3>Civil Construction</h3>
+                        <p>Complete civil works for industrial, commercial and residential projects including foundations, structural work and finishing.</p>
+                        <a href="civil-construction.html" class="btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Stone Work">
+                    </div>
+                    <div class="service-info">
+                        <h3>Stone Work</h3>
+                        <p>Professional stone fixing including Dholpur stone, Agra red stone, sandstone, and other natural stone applications.</p>
+                        <a href="stone-work.html" class="btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Excavation Work">
+                    </div>
+                    <div class="service-info">
+                        <h3>Excavation Work</h3>
+                        <p>Professional excavation services including deep excavation with shoring, trenching, and site preparation.</p>
+                        <a href="excavation.html" class="btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Materials Section -->
+    <section class="materials" id="materials">
+        <div class="container">
+            <h2 class="section-title">Our Materials</h2>
+            <div class="material-tabs">
+                <button class="tab-btn active" data-tab="dholpur">Dholpur Stone</button>
+                <button class="tab-btn" data-tab="agra">Agra Red Stone</button>
+                <button class="tab-btn" data-tab="sandblast">Sandblast Stone</button>
+                <button class="tab-btn" data-tab="delhi">Delhi Stone</button>
+            </div>
+            
+            <!-- Dholpur Stone -->
+            <div class="material-content active" id="dholpur-content">
+                <div class="material-detail">
+                    <div class="material-gallery">
+                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Dholpur Stone">
+                        <img src="https://images.unsplash.com/photo-1600607688969-a5bfb4a0b967?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Dholpur Stone Application">
+                    </div>
+                    <div class="material-specs">
+                        <h3>Dholpur Stone</h3>
+                        <p>Dholpur Stone is a natural sandstone known for its warm pink-beige color and durability. It's widely used in flooring, cladding, and paving applications due to its weather-resistant properties and aesthetic appeal.</p>
+                        
+                        <table class="specs-table">
+                            <tr>
+                                <th>Characteristic</th>
+                                <th>Details</th>
+                            </tr>
+                            <tr>
+                                <td>Color</td>
+                                <td>Pink-beige with natural variations</td>
+                            </tr>
+                            <tr>
+                                <td>Common Uses</td>
+                                <td>Flooring, cladding, paving, wall facades</td>
+                            </tr>
+                            <tr>
+                                <td>Available Sizes</td>
+                                <td>12x12", 16x16", 24x24", custom sizes</td>
+                            </tr>
+                            <tr>
+                                <td>Thickness</td>
+                                <td>15mm, 20mm, 30mm</td>
+                            </tr>
+                            <tr>
+                                <td>Finish</td>
+                                <td>Natural, honed, polished, brushed</td>
+                            </tr>
+                        </table>
+                        
+                        <a href="dholpur-stone.html" class="btn">View Projects</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Other stone types would be here but hidden initially -->
+            <div class="material-content" id="agra-content">
+                <!-- Agra Red Stone content -->
+            </div>
+            
+            <div class="material-content" id="sandblast-content">
+                <!-- Sandblast Stone content -->
+            </div>
+            
+            <div class="material-content" id="delhi-content">
+                <!-- Delhi Stone content -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Machinery Rental Section -->
+    <section class="services" id="machinery">
+        <div class="container">
+            <h2 class="section-title">Machinery Rental</h2>
+            <div class="services-grid">
+                <!-- JCB -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="JCB">
+                    </div>
+                    <div class="service-info">
+                        <h3>JCB (3 Units)</h3>
+                        <p>Heavy-duty JCB machines available for excavation, loading and other construction tasks. Well-maintained with experienced operators.</p>
+                        <a href="jcb-rental.html" class="btn">Rental Details</a>
+                    </div>
+                </div>
+                
+                <!-- Excavator -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Excavator">
+                    </div>
+                    <div class="service-info">
+                        <h3>Excavator (2 Units)</h3>
+                        <p>Modern excavators suitable for deep excavation, trenching and other heavy digging work. Available in different sizes.</p>
+                        <a href="excavator-rental.html" class="btn">Rental Details</a>
+                    </div>
+                </div>
+                
+                <!-- DG Generator -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="DG Generator">
+                    </div>
+                    <div class="service-info">
+                        <h3>DG Generators (7 Units)</h3>
+                        <p>Diesel generators from 25KVA to 250KVA capacity for power backup at construction sites and events.</p>
+                        <a href="generator-rental.html" class="btn">Rental Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section class="clients">
+        <div class="container">
+            <h2 class="section-title">Our Clients</h2>
+            <div class="client-logos">
+                <img src="https://via.placeholder.com/150x80?text=Circle+H2O" alt="Circle H2O" class="client-logo">
+                <img src="https://via.placeholder.com/150x80?text=UEM+India" alt="UEM India" class="client-logo">
+                <img src="https://via.placeholder.com/150x80?text=Mahi+Enterprises" alt="Mahi Enterprises" class="client-logo">
+                <img src="https://via.placeholder.com/150x80?text=NKG+Infra" alt="NKG Infrastructure" class="client-logo">
+                <img src="https://via.placeholder.com/150x80?text=AV+Construction" alt="AV Construction" class="client-logo">
+                <img src="https://via.placeholder.com/150x80?text=Abhilash+Const" alt="Abhilash Construction" class="
+<section class="contact" id="contact">
+    <div class="container">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <h4>Contact Person</h4>
+                            <p>Shahil Khan</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>shahilfana79@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>7678519582 / 8750687886</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🏢</div>
+                        <div>
+                            <h4>Address</h4>
+                            <p>2/1 Hanuman Road, Adarsh Nagar,<br>Near Govt School, Delhi - 110033</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="#"><span>FB</span></a>
+                    <a href="#"><span>IG</span></a>
+                    <a href="#"><span>LI</span></a>
+                    <a href="#"><span>TW</span></a>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form>
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <input type="tel" placeholder="Your Phone">
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.876234814035!2d77.17573731508345!3d28.71873378239476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d03c53679bedb%3A0x3624ba574fcc7425!2sAdarsh%20Nagar%2C%20Delhi%2C%20110033!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+</section>
+<div class="logo">
+    <!-- Logo with construction theme -->
+    <svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+        <rect x="10" y="25" width="30" height="15" fill="#e8a735"/> <!-- Building base -->
+        <polygon points="10,25 25,10 40,25" fill="#0a2c5e"/> <!-- Roof -->
+        <rect x="15" y="30" width="5" height="10" fill="#fff"/> <!-- Window left -->
+        <rect x="30" y="30" width="5" height="10" fill="#fff"/> <!-- Window right -->
+        <rect x="22" y="30" width="6" height="15" fill="#a67c52"/> <!-- Door -->
+        <circle cx="25" cy="10" r="3" fill="#e8a735"/> <!-- Roof decoration -->
+    </svg>
+    <div class="logo-text">
+        <span style="color: #0a2c5e;">KHAN</span> 
+        <span style="color: #e8a735;">CONSTRUCTIONS</span>
+    </div>
+</div>
+
+<style>
+    /* Enhanced Logo Styles */
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .logo-text {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    
+    .logo-text span:first-child {
+        position: relative;
+    }
+    
+    .logo-text span:first-child:after {
+        content: '';
+        position: absolute;
+        right: -5px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 2px;
+        height: 20px;
+        background: #e8a735;
+    }
+    
+    /* Animation for logo */
+    @keyframes build {
+        0% { opacity: 0; transform: translateY(10px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+    
+    svg {
+        animation: build 1s ease-out forwards;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .logo-text {
+            font-size: 20px;
+        }
+    }
+</style>
